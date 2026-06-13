@@ -6,9 +6,14 @@ def play():
     attempts = 0
 
     print("I'm thinking of a number between 1 and 100.")
+    print("(Type 'quit' to give up at any time.)")
 
     while True:
         guess = input("Your guess: ")
+        if guess.lower() == "quit":
+            print(f"The number was {secret}. Better luck next time!")
+            break
+
         if not guess.isdigit():
             print("Please enter a number.")
             continue
